@@ -1,0 +1,6 @@
+{
+  "principal_cents": 100000,
+  "annual_rate_bps": 1200,
+  "term_months": 12,
+  "start_date": "2026-01-01"
+}
