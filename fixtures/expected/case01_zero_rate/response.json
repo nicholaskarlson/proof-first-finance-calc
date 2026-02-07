@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "calculator": "amortize",
+  "principal_cents": 120000,
+  "annual_rate_bps": 0,
+  "term_months": 12,
+  "start_date": "2026-01-01",
+  "payment_cents": 10000,
+  "last_payment_cents": 10000,
+  "total_interest_cents": 0,
+  "total_paid_cents": 120000
+}
