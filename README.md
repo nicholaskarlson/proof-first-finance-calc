@@ -17,13 +17,13 @@ It exposes the calculator in two ways:
 2) **Local demo**
 - `go run ./cmd/fincalc demo --out ./out/demo` writes deterministic outputs derived from fixtures and verifies they match the golden files.
 
-## Proof gates
+## Canonical commands
 
 ```bash
-# One command (Linux/macOS/WSL)
+# Proof gate (one command)
 make verify
 
-# Or run the gates directly
+# Proof gates (portable, no Makefile)
 go test -count=1 ./...
 go run ./cmd/fincalc demo --out ./out/demo
 ```

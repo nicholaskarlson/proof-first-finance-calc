@@ -5,15 +5,12 @@ This repo is intentionally small: one calculator (Amortization v1) with a strict
 ## Canonical commands
 
 ```bash
-# One command (Linux/macOS/WSL)
+# Proof gate (one command)
 make verify
 
-# Proof gates (portable)
+# Proof gates (portable, no Makefile)
 go test -count=1 ./...
 go run ./cmd/fincalc demo --out ./out/demo
-
-# Serve HTTP API
-go run ./cmd/fincalc serve --addr 127.0.0.1:8080
 ```
 
 ## Input contract (Amortize v1)
@@ -70,4 +67,12 @@ go run ./cmd/fincalc demo --out ./out/demo
 
 # Then run the optional Python verifier on one case
 python3 examples/python/verify_fincalc_case.py --out-root ./out/demo --case case02_interest
+```
+
+
+## Serve the HTTP API
+
+```bash
+# Local development server
+go run ./cmd/fincalc serve --addr :8080
 ```
