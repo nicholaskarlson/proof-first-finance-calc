@@ -1,6 +1,8 @@
-.PHONY: test fmt build demo clean
+.PHONY: test fmt build demo verify clean
 
 VERSION ?= dev
+
+verify: test demo
 
 test:
 	go test -count=1 ./...

@@ -5,10 +5,11 @@ This repo is intentionally small: one calculator (Amortization v1) with a strict
 ## Canonical commands
 
 ```bash
-# Proof gates
-go test -count=1 ./...
+# One command (Linux/macOS/WSL)
+make verify
 
-# Demo (writes outputs and verifies against fixtures)
+# Proof gates (portable)
+go test -count=1 ./...
 go run ./cmd/fincalc demo --out ./out/demo
 
 # Serve HTTP API
@@ -23,6 +24,12 @@ JSON request body:
 - `annual_rate_bps` (int, >= 0)
 - `term_months` (int, > 0)
 - `start_date` (YYYY-MM-DD)
+
+Schedule dates:
+
+- The first schedule row date equals `start_date`.
+- Each subsequent row advances by one calendar month using Go's `time.Time.AddDate(0, 1, 0)` semantics.
+- No business-day or end-of-month adjustments are applied.
 
 ## Output contract
 
