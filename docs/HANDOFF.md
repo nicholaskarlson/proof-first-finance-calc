@@ -54,3 +54,13 @@ Expected-fail cases write:
 - Add fixtures under `fixtures/input/<case>/request.json`.
 - Check in goldens under `fixtures/expected/<case>/`.
 - Add tests in `tests/` (goldens first, then API coverage).
+
+## Optional: Python check (stdlib only)
+
+```bash
+# Run the Go demo first (writes outputs and verifies goldens)
+go run ./cmd/fincalc demo --out ./out/demo
+
+# Then run the optional Python verifier on one case
+python3 examples/python/verify_fincalc_case.py --out-root ./out/demo --case case02_interest
+```
