@@ -20,7 +20,12 @@ It exposes the calculator in two ways:
 ## Proof gates
 
 ```bash
+# One command (Linux/macOS/WSL)
+make verify
+
+# Or run the gates directly
 go test -count=1 ./...
+go run ./cmd/fincalc demo --out ./out/demo
 ```
 
 ## Demo
