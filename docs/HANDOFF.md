@@ -38,12 +38,12 @@ Schedule dates:
 On error, the API responds with status `400` and a stable one-line body:
 
 ```
-error: <message>
+error: MESSAGE
 ```
 
 ### Demo output
 
-`fincalc demo --out <dir>` writes one folder per fixture case:
+`fincalc demo --out OUTDIR` writes one folder per fixture case:
 
 - `response.json`
 - `schedule.csv`
@@ -55,8 +55,8 @@ Expected-fail cases write:
 ## Extending safely
 
 - Add a new calculator under `internal/calc/`.
-- Add fixtures under `fixtures/input/<case>/request.json`.
-- Check in goldens under `fixtures/expected/<case>/`.
+- Add fixtures under `fixtures/input/CASE/request.json`.
+- Check in goldens under `fixtures/expected/CASE/`.
 - Add tests in `tests/` (goldens first, then API coverage).
 
 ## Optional: Python check (stdlib only)
