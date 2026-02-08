@@ -15,6 +15,8 @@ import (
 	"github.com/nicholaskarlson/proof-first-finance-calc/internal/fsutil"
 )
 
+var version = "dev"
+
 func main() {
 	if len(os.Args) < 2 {
 		usage()
@@ -26,6 +28,9 @@ func main() {
 
 	var err error
 	switch sub {
+	case "version", "--version", "-v":
+		fmt.Printf("fincalc %s\n", version)
+		return
 	case "demo":
 		err = cmdDemo(args)
 	case "serve":
@@ -49,10 +54,12 @@ func usage() {
 	fmt.Fprint(os.Stderr, `fincalc - proof-first finance calculators
 
 Usage:
+  fincalc version
   fincalc demo  --out <dir> [--fixtures fixtures]
   fincalc serve --addr <host:port>
 
 Commands:
+  version Print version and exit.
   demo   Recompute known cases from fixtures and verify outputs match goldens.
   serve  Run the HTTP API server (v1).
 `)
