@@ -15,7 +15,7 @@ It exposes the calculator in two ways:
 - `POST /v1/amortize/schedule.csv` → CSV schedule
 
 2) **Local demo**
-- `go run ./cmd/fincalc demo --out ./out/demo` writes deterministic outputs derived from fixtures and verifies they match the golden files.
+- `go run ./cmd/fincalc demo --out ./out` writes deterministic outputs derived from fixtures and verifies they match the golden files.
 
 ## Canonical commands
 
@@ -25,16 +25,16 @@ make verify
 
 # Proof gates (portable, no Makefile)
 go test -count=1 ./...
-go run ./cmd/fincalc demo --out ./out/demo
+go run ./cmd/fincalc demo --out ./out
 ```
 
 ## Demo
 
 ```bash
-go run ./cmd/fincalc demo --out ./out/demo
+go run ./cmd/fincalc demo --out ./out
 ```
 
-On success it writes one folder per fixture case under `./out/demo/`.
+On success it writes one folder per fixture case under `./out/`.
 
 ## Run the HTTP API
 

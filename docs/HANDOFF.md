@@ -10,7 +10,7 @@ make verify
 
 # Proof gates (portable, no Makefile)
 go test -count=1 ./...
-go run ./cmd/fincalc demo --out ./out/demo
+go run ./cmd/fincalc demo --out ./out
 ```
 
 ## Input contract (Amortize v1)
@@ -63,10 +63,10 @@ Expected-fail cases write:
 
 ```bash
 # Run the Go demo first (writes outputs and verifies goldens)
-go run ./cmd/fincalc demo --out ./out/demo
+go run ./cmd/fincalc demo --out ./out
 
 # Then run the optional Python verifier on one case
-python3 examples/python/verify_fincalc_case.py --out-root ./out/demo --case case02_interest
+python3 examples/python/verify_fincalc_case.py --out-root ./out --case case02_interest
 ```
 
 

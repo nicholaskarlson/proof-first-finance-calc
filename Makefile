@@ -15,7 +15,7 @@ build:
 	go build -ldflags "-X main.version=$(VERSION)" -o bin/fincalc ./cmd/fincalc
 
 demo:
-	go run ./cmd/fincalc demo --out ./out/demo
+	go run ./cmd/fincalc demo --out ./out
 
 clean:
 	rm -rf ./bin ./out

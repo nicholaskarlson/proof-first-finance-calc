@@ -69,7 +69,7 @@ def parse_schedule_csv(p: Path) -> list[Row]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-root", default="out/demo", help="demo output root (contains <case>/...)")
+    ap.add_argument("--out-root", default="out", help="demo output root (contains <case>/...)")
     ap.add_argument("--case", default="case02_interest", help="case folder name")
     ap.add_argument("--compare-goldens", action="store_true", help="also compare output bytes to fixtures/expected")
     args = ap.parse_args()

@@ -6,11 +6,11 @@ They provide a second, independent check that demo outputs are internally consis
 Run the Go demo first:
 
 ```bash
-go run ./cmd/fincalc demo --out ./out/demo
+go run ./cmd/fincalc demo --out ./out
 ```
 
 Then verify one case:
 
 ```bash
-python3 examples/python/verify_fincalc_case.py --out-root ./out/demo --case case02_interest
+python3 examples/python/verify_fincalc_case.py --out-root ./out --case case02_interest
 ```
